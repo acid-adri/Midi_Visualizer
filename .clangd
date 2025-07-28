@@ -1,2 +1,7 @@
+
 CompileFlags:
-  Add: [-I/mnt/c/Users/marco/Desktop/Programme/Tools/libs/rtmidi]
+  # on Control-Center
+  #Add: [-I/mnt/c/Users/marco/Desktop/Programme/Tools/libs/rtmidi]
+
+  # on Macbook
+  Add: [-I/Users/adrianmuller/MAIN/3._Projects/Programmieren/1._libs/rtmidi]

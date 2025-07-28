@@ -3,18 +3,14 @@
 #include <RtMidi.h>
 #include <ostream>
 
-// open Midi Ports
+void getPorts(RtMidiIn *midiin);
+
 int main() {
 	printf("starting!\n");
 	RtMidiIn *midiin = new RtMidiIn();
-	int i = 0, midiports = midiin->getPortCount();
-	
 	printf("Choose MidiPort");
-	for (i = 0; i < midiports ; i++) {	
-		std::string portName = midiin->getPortName(i);
-		std::cout << "Port " << i << ":" << portName << "\n";
-	
-	}
+	getPorts(midiin);
+
 	int j;
 	std::cin >> j;
 	midiin->openPort(j);
@@ -30,4 +26,14 @@ int main() {
 			std::cout << std::endl;
 		}
 	}	
+}
+
+//function to display all available midi ports
+void getPorts(RtMidiIn *midiin){
+	int i = 0, midiports = midiin->getPortCount();
+
+	for(i = 0; i < midiports; i++){
+		std::string portName = midiin->getPortName(i);
+		std::cout << "Port " << i << ": " << portName << "\n";
+	}
 }
